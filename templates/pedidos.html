@@ -1,11 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Pedidos</h1>
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Pedidos</h1>
+
+<a href="{% url 'criar_pedido' %}">Novo Pedido</a>
+
+<ul>
+    {% for pedido in pedidos %}
+        <li>
+            <strong>Pedido #{{ pedido.id }}</strong><br>
+
+            Cliente: {{ pedido.cliente.nome }}<br>
+            Produto: {{ pedido.produto.nome }}<br>
+            Quantidade: {{ pedido.quantidade }}<br>
+            Total: R$ {{ pedido.total }}<br>
+            Data: {{ pedido.data }}
+
+        </li>
+        <hr>
+    {% empty %}
+        <li>Nenhum pedido cadastrado</li>
+    {% endfor %}
+</ul>
+
+{% endblock %}

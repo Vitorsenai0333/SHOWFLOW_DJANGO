@@ -27,5 +27,8 @@ class Pedido(models.Model):
     quantidade = models.IntegerField()
     data = models.DateTimeField(auto_now_add=True)
 
+    def total(self):
+        return self.quantidade * self.produto.preco
+
     def __str__(self):
         return f"Pedido {self.id} - {self.cliente.nome}"
