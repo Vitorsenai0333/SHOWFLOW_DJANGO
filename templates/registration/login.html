@@ -1,24 +1,29 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <title>Login - ShopFlow</title>
-</head>
-<body>
+{% extends 'base.html' %}
 
-    <h2>Login</h2>
+{% block content %}
 
-    <form method="post">
-        {% csrf_token %}
+<div class="login-container">
 
-        {{ form.as_p }}
+    <div class="login-box">
 
-        <button type="submit">Entrar</button>
-    </form>
+        <h1>Login</h1>
 
-    {% if form.errors %}
-        <p style="color:red;">Usuário ou senha inválidos</p>
-    {% endif %}
+        <form method="post">
+            {% csrf_token %}
 
-</body>
-</html>
+            {{ form.as_p }}
+
+            <button type="submit">Entrar</button>
+        </form>
+
+        {% if form.errors %}
+            <div class="msg error">
+                Usuário ou senha inválidos
+            </div>
+        {% endif %}
+
+    </div>
+
+</div>
+<p class="nome-fantasia">SHOW FLOW</p>
+{% endblock %}

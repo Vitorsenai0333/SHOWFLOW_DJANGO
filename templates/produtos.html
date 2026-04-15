@@ -1,14 +1,37 @@
-<h1>Produtos</h1>
+{% extends 'base.html' %}
 
-<a href="{% url 'criar_produto' %}">Novo Produto</a>
+{% block content %}
 
-<ul>
-    {% for produto in produtos %}
-        <li>
-            {{ produto.nome }} - R$ {{ produto.preco }} - Qtd: {{ produto.quantidade }}
+<div class="container">
 
-            <a href="{% url 'editar_produto' produto.id %}">Editar</a>
-            <a href="{% url 'deletar_produto' produto.id %}">Deletar</a>
-        </li>
-    {% endfor %}
-</ul>
+    <h1 class="titulo">Produtos</h1>
+
+    <a class="btn" href="{% url 'criar_produto' %}">+ Novo Produto</a>
+
+    <div class="box-produtos">
+
+        <ul>
+            {% for produto in produtos %}
+                <li class="produto-item">
+
+                    <div>
+                        <strong>{{ produto.nome }}</strong><br>
+                        <span>R$ {{ produto.preco }} | Qtd: {{ produto.quantidade }}</span>
+                    </div>
+
+                    <div class="acoes">
+                        <a class="btn-editar" href="{% url 'editar_produto' produto.id %}">Editar</a>
+                        <a class="btn-deletar" href="{% url 'deletar_produto' produto.id %}">Deletar</a>
+                    </div>
+
+                </li>
+            {% empty %}
+                <li>Nenhum produto cadastrado</li>
+            {% endfor %}
+        </ul>
+
+    </div>
+
+</div>
+<p class="nome-fantasia">SHOW FLOW</p>
+{% endblock %}

@@ -2,11 +2,25 @@
 
 {% block content %}
 
-<h1>Home</h1>
+<h1>Dashboard</h1>
 
-<form method="post" action="{% url 'logout' %}">
-    {% csrf_token %}
-    <button type="submit">Sair</button>
-</form>
+<div class="dashboard">
+
+    <div class="card">
+        <h2>Clientes</h2>
+        <p>{{ total_clientes }}</p>
+    </div>
+
+    <div class="card">
+        <h2>Produtos</h2>
+        <p>{{ total_produtos }}</p>
+    </div>
+
+    <div class="card">
+        <h2>Pedidos</h2>
+        <p>{{ total_pedidos }}</p>
+    </div>
+
+</div>
 
 {% endblock %}

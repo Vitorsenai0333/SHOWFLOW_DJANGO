@@ -2,21 +2,36 @@
 
 {% block content %}
 
-<h1>Clientes</h1>
+<div class="container">
 
-<a href="{% url 'criar_cliente' %}">Novo Cliente</a>
+    <h1 class="titulo">Clientes</h1>
 
-<ul>
-    {% for cliente in clientes %}
-        <li>
-            {{ cliente.nome }} - {{ cliente.email }}
+    <a class="btn" href="{% url 'criar_cliente' %}">+ Novo Cliente</a>
 
-            <a href="{% url 'editar_cliente' cliente.id %}">Editar</a>
-            <a href="{% url 'deletar_cliente' cliente.id %}">Deletar</a>
-        </li>
-    {% empty %}
-        <li>Nenhum cliente cadastrado</li>
-    {% endfor %}
-</ul>
+    <div class="box-clientes">
 
+        <ul>
+            {% for cliente in clientes %}
+                <li class="cliente-item">
+
+                    <div>
+                        <strong>{{ cliente.nome }}</strong><br>
+                        <span>{{ cliente.email }}</span>
+                    </div>
+
+                    <div class="acoes">
+                        <a class="btn-editar" href="{% url 'editar_cliente' cliente.id %}">Editar</a>
+                        <a class="btn-deletar" href="{% url 'deletar_cliente' cliente.id %}">Deletar</a>
+                    </div>
+
+                </li>
+            {% empty %}
+                <li>Nenhum cliente cadastrado</li>
+            {% endfor %}
+        </ul>
+
+    </div>
+
+</div>
+<p class="nome-fantasia">SHOW FLOW</p>
 {% endblock %}

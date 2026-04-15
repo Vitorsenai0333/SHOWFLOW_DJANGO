@@ -1,3 +1,7 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
 <h1>Produto</h1>
 
 <form method="POST">
@@ -7,3 +11,6 @@
 </form>
 
 <a href="{% url 'produtos' %}">Voltar</a>
+
+<p class="nome-fantasia">SHOW FLOW</p>
+{% endblock %}

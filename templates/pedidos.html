@@ -2,26 +2,36 @@
 
 {% block content %}
 
-<h1>Pedidos</h1>
+<div class="container">
 
-<a href="{% url 'criar_pedido' %}">Novo Pedido</a>
+    <h1 class="titulo">Pedidos</h1>
 
-<ul>
-    {% for pedido in pedidos %}
-        <li>
-            <strong>Pedido #{{ pedido.id }}</strong><br>
+    <a class="btn" href="{% url 'criar_pedido' %}">+ Novo Pedido</a>
 
-            Cliente: {{ pedido.cliente.nome }}<br>
-            Produto: {{ pedido.produto.nome }}<br>
-            Quantidade: {{ pedido.quantidade }}<br>
-            Total: R$ {{ pedido.total }}<br>
-            Data: {{ pedido.data }}
+    <div class="box-pedidos">
 
-        </li>
-        <hr>
-    {% empty %}
-        <li>Nenhum pedido cadastrado</li>
-    {% endfor %}
-</ul>
+        <ul>
+            {% for pedido in pedidos %}
+                <li class="pedido-item">
 
+                    <div>
+                        <strong>Pedido #{{ pedido.id }}</strong><br>
+                        <span>
+                            Cliente: {{ pedido.cliente.nome }} |
+                            Produto: {{ pedido.produto.nome }} |
+                            Qtd: {{ pedido.quantidade }} |
+                            Data: {{ pedido.data|date:"d/m/Y H:i" }}
+                        </span>
+                    </div>
+
+                </li>
+            {% empty %}
+                <li>Nenhum pedido cadastrado</li>
+            {% endfor %}
+        </ul>
+
+    </div>
+
+</div>
+<p class="nome-fantasia">SHOW FLOW</p>
 {% endblock %}
