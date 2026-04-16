@@ -3,24 +3,29 @@
 {% block content %}
 
 <h1>Dashboard</h1>
+<p class="subtitulo">Bem-vindo ao sistema TREM FLOW</p>
 
 <div class="dashboard">
 
-    <div class="card">
+    <a href="{% url 'clientes' %}" class="card">
+        <div class="icone">👤</div>
         <h2>Clientes</h2>
         <p>{{ total_clientes }}</p>
-    </div>
+    </a>
 
-    <div class="card">
+    <a href="{% url 'produtos' %}" class="card">
+        <div class="icone">📦</div>
         <h2>Produtos</h2>
         <p>{{ total_produtos }}</p>
-    </div>
+    </a>
 
-    <div class="card">
+    <a href="{% url 'pedidos' %}" class="card">
+        <div class="icone">🧾</div>
         <h2>Pedidos</h2>
         <p>{{ total_pedidos }}</p>
-    </div>
+    </a>
 
 </div>
+
 
 {% endblock %}

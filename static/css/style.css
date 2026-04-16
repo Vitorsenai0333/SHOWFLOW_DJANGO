@@ -348,3 +348,51 @@ input, select {
 .logout button:hover {
     background-color: #0ea5e9;
 }
+
+
+.logo img {
+    width: auto !important;
+    height: 40px !important;
+    max-width: 150px !important;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-2{
+    display: flex;
+    align-items: center;
+    width: auto !important;
+    height: 40px !important;
+}
+
+.subtitulo {
+    text-align: center;
+    color: #94a3b8;
+    margin-bottom: 20px;
+}
+
+
+.card {
+    text-decoration: none;
+    transition: 0.3s;
+    color: rgb(1, 1, 39); /* importante */
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.icone {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+

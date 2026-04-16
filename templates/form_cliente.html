@@ -2,19 +2,19 @@
 
 {% block content %}
 
-<h1>Cliente</h1>
+<div class="form-box">
+    <h1>Cliente</h1>
 
-<form method="POST">
-    {% csrf_token %}
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Salvar</button>
+    </form>
 
-    {{ form.as_p }}
+    <a class="link-voltar" href="{% url 'clientes' %}">Voltar</a>
+</div>
 
-    <button type="submit">Salvar</button>
-</form>
-
-<a href="{% url 'clientes' %}">Voltar</a>
-
-<p class="nome-fantasia">SHOW FLOW</p>
+<p class="nome-fantasia">TREM FLOW</p>
 
 {% endblock %}
 
