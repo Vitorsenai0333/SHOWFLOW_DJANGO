@@ -7,7 +7,19 @@
 
     <form method="POST">
         {% csrf_token %}
-        {{ form.as_p }}
+
+        <div class="campo">
+            <label>Nome</label>
+            {{ form.nome }}
+        </div>
+
+        <div class="campo">
+            <label>Email</label>
+            {{ form.email }}
+        </div>
+
+        
+
         <button type="submit">Salvar</button>
     </form>
 
@@ -17,4 +29,3 @@
 <p class="nome-fantasia">TREM FLOW</p>
 
 {% endblock %}
-
