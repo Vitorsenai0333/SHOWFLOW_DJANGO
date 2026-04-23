@@ -5,35 +5,41 @@
     box-sizing: border-box;
 }
 
-
 body {
     font-family: Arial, sans-serif;
-    background-color: #0f172a; /* azul escuro */
-    color: #e2e8f0; /* texto claro */
+    background-color: #0f172a;
+    color: #e2e8f0;
 }
 
-
-nav {
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     background-color: #020617;
     padding: 15px 30px;
-    display: flex;
-    gap: 20px;
-    align-items: center;
     border-bottom: 1px solid #1e293b;
 }
 
-nav a {
+nav a,
+.menu a {
     color: #cbd5f5;
     text-decoration: none;
     font-weight: 500;
     transition: 0.3s;
 }
 
-nav a:hover {
+nav a:hover,
+.menu a:hover {
     color: #38bdf8;
 }
 
+.logo img {
+    height: 40px;
+    max-width: 150px;
+}
 
+/* CONTAINER */
 .container {
     max-width: 900px;
     margin: 40px auto;
@@ -43,7 +49,17 @@ nav a:hover {
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
 
+/* FORM BOX (CORREÇÃO PRINCIPAL) */
+.form-box {
+    max-width: 500px;
+    margin: 40px auto;
+    background-color: #020617;
+    padding: 30px;
+    border-radius: 10px;
+    border: 1px solid #1e293b;
+}
 
+/* TITULOS */
 h1 {
     text-align: center;
     margin-bottom: 20px;
@@ -51,7 +67,13 @@ h1 {
     letter-spacing: 1px;
 }
 
+.subtitulo {
+    text-align: center;
+    color: #94a3b8;
+    margin-bottom: 20px;
+}
 
+/* LISTAS */
 ul {
     list-style: none;
     margin-top: 20px;
@@ -62,7 +84,7 @@ li {
     border-bottom: 1px solid #1e293b;
 }
 
-
+/* LINKS */
 a {
     color: #38bdf8;
     margin-left: 10px;
@@ -73,12 +95,12 @@ a:hover {
     text-decoration: underline;
 }
 
-
+/* BOTÕES */
 button {
     background-color: #38bdf8;
     color: black;
     border: none;
-    padding: 8px 15px;
+    padding: 10px 15px;
     border-radius: 5px;
     cursor: pointer;
     transition: 0.3s;
@@ -88,17 +110,18 @@ button:hover {
     background-color: #0ea5e9;
 }
 
-
+/* INPUTS (MELHORADOS) */
 input, select {
     width: 100%;
-    padding: 8px;
-    margin-bottom: 10px;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
     border-radius: 5px;
     border: none;
     outline: none;
 }
 
-
+/* MENSAGENS */
 .msg {
     padding: 10px;
     margin: 10px 0;
@@ -116,14 +139,13 @@ input, select {
     color: #fecaca;
 }
 
-
+/* LOGIN */
 .login-container {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 80vh;
 }
-
 
 .login-box {
     background-color: #020617;
@@ -135,29 +157,17 @@ input, select {
     box-shadow: 0 0 20px rgba(0,0,0,0.5);
 }
 
-
-.login-box h1 {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-
 .login-box button {
     width: 100%;
     margin-top: 10px;
 }
 
-.titulo {
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-
+/* BOTÃO PADRÃO */
 .btn {
     display: inline-block;
     background-color: #1e293b;
     color: white;
-    padding: 8px 15px;
+    padding: 10px;
     border-radius: 5px;
     text-decoration: none;
     margin-bottom: 15px;
@@ -167,21 +177,19 @@ input, select {
     background-color: #334155;
 }
 
-
-.box-clientes {
+/* LISTAS */
+.box-clientes,
+.box-produtos,
+.box-pedidos {
     background-color: #020617;
     border: 1px solid #1e293b;
     border-radius: 10px;
     padding: 20px;
 }
 
-
-.box-clientes ul {
-    list-style: none;
-}
-
-
-.cliente-item {
+/* ITENS */
+.cliente-item,
+.produto-item {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -189,24 +197,24 @@ input, select {
     border-bottom: 1px solid #1e293b;
 }
 
-
-.cliente-item:last-child {
+.cliente-item:last-child,
+.produto-item:last-child,
+.pedido-item:last-child {
     border-bottom: none;
 }
 
-
-.cliente-item span {
+.cliente-item span,
+.produto-item span,
+.pedido-item span {
     color: #94a3b8;
     font-size: 14px;
 }
 
-
+/* AÇÕES */
 .acoes a {
     margin-left: 10px;
-    text-decoration: none;
     font-size: 14px;
 }
-
 
 .btn-editar {
     color: #38bdf8;
@@ -216,81 +224,13 @@ input, select {
     color: #f87171;
 }
 
-.box-produtos {
-    background-color: #020617;
-    border: 1px solid #1e293b;
-    border-radius: 10px;
-    padding: 20px;
-}
-
-
-.box-produtos ul {
-    list-style: none;
-}
-
-
-.produto-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px;
-    border-bottom: 1px solid #1e293b;
-}
-
-.produto-item:last-child {
-    border-bottom: none;
-}
-
-
-.produto-item span {
-    color: #94a3b8;
-    font-size: 14px;
-}
-
-
-.box-pedidos {
-    background-color: #020617;
-    border: 1px solid #1e293b;
-    border-radius: 10px;
-    padding: 20px;
-}
-
-
-.box-pedidos ul {
-    list-style: none;
-}
-
-
+/* PEDIDOS */
 .pedido-item {
     padding: 15px;
     border-bottom: 1px solid #1e293b;
 }
 
-.pedido-item:last-child {
-    border-bottom: none;
-}
-
-/* TEXTO */
-.pedido-item span {
-    color: #94a3b8;
-    font-size: 14px;
-    line-height: 1.5;
-}
-
-
-.nome-fantasia {
-    position: fixed;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    
-    font-size: 14px;
-    color: #94a3b8;
-    opacity: 0.7;
-
-    letter-spacing: 2px;
-}
-
+/* DASHBOARD */
 .dashboard {
     display: flex;
     gap: 20px;
@@ -303,8 +243,13 @@ input, select {
     padding: 20px;
     border-radius: 10px;
     text-align: center;
+    text-decoration: none;
     color: white;
-    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
 }
 
 .card h2 {
@@ -317,82 +262,135 @@ input, select {
     font-weight: bold;
 }
 
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #020617;
-    padding: 15px 30px;
-}
-
-.menu a {
-    color: #cbd5f5;
-    margin-right: 20px;
-    text-decoration: none;
-    font-weight: 500;
-}
-
-.menu a:hover {
-    color: #38bdf8;
-}
-
-.logout button {
-    background-color: #38bdf8;
-    border: none;
-    padding: 8px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
-}
-
-.logout button:hover {
-    background-color: #0ea5e9;
-}
-
-
-.logo img {
-    width: auto !important;
-    height: 40px !important;
-    max-width: 150px !important;
-}
-
-.navbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-}
-
-.logo-2{
-    display: flex;
-    align-items: center;
-    width: auto !important;
-    height: 40px !important;
-}
-
-.subtitulo {
-    text-align: center;
-    color: #94a3b8;
-    margin-bottom: 20px;
-}
-
-
-.card {
-    text-decoration: none;
-    transition: 0.3s;
-    color: rgb(1, 1, 39); /* importante */
-}
-
-.card:hover {
-    transform: scale(1.05);
-}
-
 .icone {
     font-size: 30px;
     margin-bottom: 10px;
 }
 
+/* RODAPÉ */
+.nome-fantasia {
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 14px;
+    color: #94a3b8;
+    opacity: 0.7;
+    letter-spacing: 2px;
+}
+
+@media (max-width: 768px) {
+
+    body {
+        padding: 0;
+    }
+
+    /* NAVBAR */
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        text-align: center;
+    }
+
+    /* MENU HORIZONTAL */
+    .menu {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 12px;
+        width: 100%;
+    }
+
+    .menu a {
+        margin: 0;
+        font-size: 14px;
+        padding: 5px 10px;
+        border-radius: 5px;
+    }
+
+    .menu a:hover {
+        background-color: #1e293b;
+    }
+
+    /* BOTÃO SAIR */
+    .logout {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .logout button {
+        width: 90%;
+        max-width: 300px;
+    }
+
+    /* CONTAINER FULL */
+    .container {
+        max-width: 100%;
+        width: 100%;
+        margin: 0;
+        border-radius: 0;
+        padding: 20px;
+    }
+
+    /* FORMULÁRIO */
+    .form-box {
+        max-width: 100%;
+        width: 100%;
+        margin: 0;
+        border-radius: 0;
+        padding: 20px;
+    }
+
+    /* LISTAS */
+    .cliente-item,
+    .produto-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .acoes {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    /* PEDIDOS */
+    .pedido-item span {
+        display: block;
+        margin-top: 5px;
+    }
+
+    /* DASHBOARD */
+    .dashboard {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .card {
+        width: 100%;
+    }
+
+    /* INPUT BUG MOBILE */
+    input, select {
+        font-size: 16px;
+    }
+
+    /* LOGIN */
+    .login-container {
+        height: auto;
+        padding: 20px;
+    }
+
+    .login-box {
+        padding: 25px;
+    }
+
+    /* RODAPÉ */
+    .nome-fantasia {
+        font-size: 12px;
+    }
+}
