@@ -267,6 +267,7 @@ input, select {
     margin-bottom: 10px;
 }
 
+
 /* RODAPÉ */
 .nome-fantasia {
     position: fixed;
@@ -393,4 +394,45 @@ input, select {
     .nome-fantasia {
         font-size: 12px;
     }
+
+
+
+
+.form-box {
+    max-width: 500px;
+    margin: 40px auto;
+    background-color: #020617;
+    padding: 30px;
+    border-radius: 10px;
+    border: 1px solid #1e293b;
+}
+
+.campo {
+    margin-bottom: 15px;
+}
+
+.campo label {
+    display: block;
+    margin-bottom: 5px;
+    color: #94a3b8;
+    font-size: 14px;
+}
+
+
+.campo input,
+.campo select {
+    width: 100% !important;
+    padding: 10px !important;
+    border-radius: 6px !important;
+    border: none !important;
+    background-color: #0f172a !important;
+    color: white !important;
+}
+
+
+.campo input:focus,
+.campo select:focus {
+    outline: 2px solid #38bdf8;
+}
+
 }

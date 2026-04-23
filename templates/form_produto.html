@@ -7,7 +7,22 @@
 
     <form method="POST">
         {% csrf_token %}
-        {{ form.as_p }}
+
+        <div class="campo">
+            <label>Nome</label>
+            {{ form.nome }}
+        </div>
+
+        <div class="campo">
+            <label>Preço</label>
+            {{ form.preco }}
+        </div>
+
+        <div class="campo">
+            <label>Quantidade</label>
+            {{ form.quantidade }}
+        </div>
+
         <button type="submit">Salvar</button>
     </form>
 
